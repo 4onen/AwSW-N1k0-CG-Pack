@@ -30,9 +30,17 @@ def remy_c4_hatchery():
             .hook_call_to('n1k0_four_remycomic_hatchery')
         )
 
+def kalinth_introduction():
+    ( ml.find_label('nohelp')
+        .hook_to('n1k0_four_kalinth_introduction', return_link=False)
+        .search_say("Anyway, you can find all the files here. I'll leave the rest to you.")
+        .link_from('n1k0_four_kalinth_introduction_end')
+    )
+
 def link_scenes():
     remy4_and_me()
     remy_c4_hatchery()
+    kalinth_introduction()
 
 @loadable_mod
 class AwSWMod(Mod):
