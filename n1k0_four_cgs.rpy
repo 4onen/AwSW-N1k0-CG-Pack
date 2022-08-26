@@ -6,8 +6,6 @@ label n1k0_four_remy4_kiss:
     show black with dissolve
     show n1k0_four_remy4_kiss:
         anchor (0.5, 0)
-        transform_anchor True
-        zoom 2.0
         pos (0.5, 0)
         linear 4.0 ypos -0.8
     with dissolveslow
@@ -28,23 +26,23 @@ init:
 label n1k0_four_remycomic_hatchery:
     show black with dissolve
     show n1k0_four_remycomic_notice:
-        anchor (0.5, 0.5)
-        pos (0.4, 0.5)
+        anchor (0.5, 1.0)
+        pos (0.4, 1.0)
         linear 1.0 xpos 0.5
     with dissolve
     $ renpy.pause (2.5)
     if remystatus == "good":
         show n1k0_four_remycomic_love:
-            anchor (0.5, 0.5)
-            pos (0.4, 0.5)
+            anchor (0.5, 1.0)
+            pos (0.4, 1.0)
             linear 1.0 xpos 0.5
-        with dissolve
+        with dissolvemed
     else:
         show n1k0_four_remycomic_smile:
-            anchor (0.5, 0.5)
-            pos (0.4, 0.5)
+            anchor (0.5, 1.0)
+            pos (0.4, 1.0)
             linear 1.0 xpos 0.5
-        with dissolve
+        with dissolvemed
     $ renpy.pause (2.5)
 
     hide n1k0_four_remycomic_notice
