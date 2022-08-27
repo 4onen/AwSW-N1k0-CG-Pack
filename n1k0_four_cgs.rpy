@@ -1,4 +1,30 @@
 init:
+    image n1k0_four_ipsum_coffee = im.Scale("cg/n1k0/ipsum_coffee.jpg", 1920, 2496)
+
+label n1k0_four_ipsum_coffee:
+    Lo normal flip "And there he goes. Charming fellow isn't--"
+    show lorem shy flip with dissolve
+    Ip happy "Success!"
+    show n1k0_four_ipsum_coffee at Pan((0,0), (0,400), 4.0) with dissolveslow
+    Lo think flip "Ipsum? What succeeded?"
+    show n1k0_four_ipsum_coffee at Transform(ypos=-1100) with ease
+    m "My gaze dropped to the mug in his hand, and the heady aroma arising from it."
+    Ip happy "The coffeemaker works again."
+    Lo relieved flip "You put some dangerous chemicals through that. Are you sure it's safe to be drinking from again?"
+    show n1k0_four_ipsum_coffee at Transform(ypos=-728) with ease
+    Ip normal "Would I be drinking from it if it wasn't?"
+    Lo think flip "Honestly? With you I'm not sure."
+    Ip happy "Either way, other experiments to finish up as well. I'll be out later."
+    hide n1k0_four_ipsum_coffee with fade
+    play sound "fx/door/close2.wav"
+    $ renpy.pause (0.8)
+    Lo normal flip "As I was saying. Charming fellow, isn't he?"
+    jump n1k0_four_ipsum_coffee_end
+
+
+
+
+init:
     image n1k0_four_kalinth_introduction = im.Scale("cg/n1k0/kalinth_intro.jpg", 1920, 2400)
 
 label n1k0_four_kalinth_introduction:

@@ -1,6 +1,16 @@
 from modloader.modclass import Mod, loadable_mod
 import jz_magmalink as ml
 
+def ipsum_coffee():
+    ( ml.find_label('lorem2')
+        .search_say("Oh, my experiment is done.", depth=10000)
+        .search_hide('ipsum')
+        .search_with()
+        .hook_to('n1k0_four_ipsum_coffee', return_link=False)
+        .search_menu("He sounds fun.")
+        .link_from('n1k0_four_ipsum_coffee_end')
+    )
+
 def kalinth_introduction():
     ( ml.find_label('nohelp')
         .hook_to('n1k0_four_kalinth_introduction', return_link=False)
@@ -38,6 +48,7 @@ def remy_c4_hatchery():
         )
 
 def link_scenes():
+    ipsum_coffee()
     kalinth_introduction()
     remy4_and_me()
     remy_c4_hatchery()
