@@ -12,6 +12,17 @@ This mod adds art by N1k0 into appropriate locations in Angels with Scaly Wings,
 
 ## Resources
 
++ [Adine needs some help...!](https://www.furaffinity.net/view/48969702/)
+    <details><summary>Image</summary>
+
+    ![Adine needs some help...!](https://github.com/4onen/AwSW-N1k0-CG-Pack/blob/main/resource/cg/n1k0/adinetree/adinetree.jpg?raw=True)
+    </details>
+    <details><summary>Location</summary>
+
+    Found when Adine crashes performing her trick, near the end of Adine's third date.
+    </details>
+
+
 + [Ipsum enjoying some coffee](https://www.furaffinity.net/view/47539761/)
     <details><summary>Image</summary>
 

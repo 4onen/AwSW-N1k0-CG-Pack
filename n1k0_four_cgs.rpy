@@ -1,4 +1,43 @@
 init:
+    image n1k0_four_adine_tree = im.Scale("cg/n1k0/adinetree/adinetree.jpg", 1920, 1920)
+    image n1k0_four_adine_tree_leaves = Fixed(
+        SnowBlossom("cg/n1k0/adinetree/adinetree_leafr.png", 29, xspeed=(-25, 25), yspeed=(60, 180), fast=True), # start=3),
+        SnowBlossom("cg/n1k0/adinetree/adinetree_leafc.png", 29, xspeed=(-25, 25), yspeed=(60, 180), fast=True), # start=3),
+        SnowBlossom("cg/n1k0/adinetree/adinetree_leafl.png", 29, xspeed=(-25, 25), yspeed=(60, 180), fast=True), # start=3),
+    )
+
+label n1k0_four_adine_tree:
+    m "I saw her feeble attempt to regain control as she barely managed to steady herself enough to get back to the beach. Sand jumped up behind her as the air under her wings slammed into the beach, ground effect sending her practically bouncing off and into the treeline."
+    c "Adine! Are you alright?"
+    show n1k0_four_adine_tree at Pan((0,0),(0,600), 3.0)
+    show n1k0_four_adine_tree_leaves
+    with dissolvemed
+    $ renpy.pause (2.5)
+    Ad disappoint "H... help..."
+    m "I immediately set about untangling Adine from the ropes she'd become caught in."
+    c "What are these ropes even from?"
+    hide n1k0_four_adine_tree_leaves with dissolveslow
+    m "Looking around, I spotted a wicker basket on its side, a little ways into the forest."
+    Ad disappoint "I spotted this basket hanging from upper branches of the trees. I thought it'd be a less painful collision than with the branches."
+    Ad disappoint "Maybe someone wanted to keep their picnic away from small scavengers?"
+    Ad disappoint "Obviously I wasn't supposed to be hitting the treeline at all."
+
+    hide n1k0_four_adine_tree with dissolve
+
+    m "Freeing Adine, she was able to get back to her feet. I handed back her goggles from the grass nearby."
+
+    show adine disappoint b with dissolve
+
+    jump n1k0_four_adine_tree_end
+
+label n1k0_four_adine_tree_basketreturn:
+    Ad disappoint b "Yeah, let's put the basket up again, then head back."
+    jump n1k0_four_adine_tree_basketreturn_end
+
+
+
+
+init:
     image n1k0_four_ipsum_coffee = im.Scale("cg/n1k0/ipsum_coffee.jpg", 1920, 2496)
 
 label n1k0_four_ipsum_coffee:
