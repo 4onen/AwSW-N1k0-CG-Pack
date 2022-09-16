@@ -28,7 +28,6 @@ def remy4_and_me():
         .search_with()
         .link_behind_from('n1k0_four_remy4_kiss_end')
     )
-    print("remy4_and_me()")
 
 def remy_c4_hatchery():
     adineif = ml.find_label('c4hatchery').search_if('adinestatus == "bad"')
