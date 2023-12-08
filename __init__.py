@@ -1,7 +1,7 @@
 from modloader.modclass import Mod, loadable_mod
-import jz_magmalink as ml
 
-def adine_tree():
+
+def adine_tree(ml):
     ( ml.find_label('mpsave')
         .search_say("Her speed quickly increased while she moved towards the water. Then, she did a roll, and another, followed by the third. Dangerously close to the water's surface, she suddenly pulled up, but as she did so, one of her feet went below the surface, where it apparently caught onto something, causing her to spin out of control.")
         .hook_to('n1k0_four_adine_tree', return_link=False)
@@ -13,7 +13,7 @@ def adine_tree():
         .link_behind_from('n1k0_four_adine_tree_basketreturn_end')
     )
 
-def ipsum_coffee():
+def ipsum_coffee(ml):
     ( ml.find_label('lorem2')
         .search_say("Oh, my experiment is done.", depth=10000)
         .search_hide('ipsum')
@@ -23,14 +23,14 @@ def ipsum_coffee():
         .link_from('n1k0_four_ipsum_coffee_end')
     )
 
-def kalinth_introduction():
+def kalinth_introduction(ml):
     ( ml.find_label('nohelp')
         .hook_to('n1k0_four_kalinth_introduction', return_link=False)
         .search_say("Anyway, you can find all the files here. I'll leave the rest to you.")
         .link_from('n1k0_four_kalinth_introduction_end')
     )
 
-def remy4_and_me():
+def remy4_and_me(ml):
     ( ml.find_label('remy4skip2')
         .search_if('remystatus == "neutral"')
         .branch_else()
@@ -41,7 +41,7 @@ def remy4_and_me():
         .link_behind_from('n1k0_four_remy4_kiss_end')
     )
 
-def remy_c4_hatchery():
+def remy_c4_hatchery(ml):
     adineif = ml.find_label('c4hatchery').search_if('adinestatus == "bad"')
 
     branches = [
@@ -58,12 +58,12 @@ def remy_c4_hatchery():
             .hook_call_to('n1k0_four_remycomic_hatchery')
         )
 
-def link_scenes():
-    adine_tree()
-    ipsum_coffee()
-    kalinth_introduction()
-    remy4_and_me()
-    remy_c4_hatchery()
+def link_scenes(ml):
+    adine_tree(ml)
+    ipsum_coffee(ml)
+    kalinth_introduction(ml)
+    remy4_and_me(ml)
+    remy_c4_hatchery(ml)
 
 @loadable_mod
 class AwSWMod(Mod):
@@ -74,7 +74,8 @@ class AwSWMod(Mod):
 
     @staticmethod
     def mod_load():
-        link_scenes()
+        import jz_magmalink as ml
+        link_scenes(ml)
 
     @staticmethod
     def mod_complete():
